@@ -100,29 +100,33 @@
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-            Welcome
+         <i class="fa fa-user" aria-hidden="true"></i> Users
           </h2>
-          <!-- now row start -->
+        <!-- now row start -->
           <div class="row">
-            <div
-              class="col-md-4 bg-dark text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-user-circle" aria-hidden="true">Total Users</i>
-            </div>
-
-            <div
-              class="col-md-4 bg-danger text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-bed" aria-hidden="true">Total Booking</i>
-            </div>
-            <div
-              class="col-md-4 bg-dark text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-bed" aria-hidden="true">Bookings</i>
-            </div>
+            <table class="table table-dark table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
           <!-- now row end -->
         </div>
