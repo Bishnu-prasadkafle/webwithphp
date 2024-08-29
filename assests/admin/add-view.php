@@ -100,29 +100,11 @@
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-            Welcome
+           View all posts
           </h2>
           <!-- now row start -->
           <div class="row">
-            <div
-              class="col-md-4 bg-dark text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-user-circle" aria-hidden="true">Total Users</i>
-            </div>
-
-            <div
-              class="col-md-4 bg-danger text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-bed" aria-hidden="true">Total Booking</i>
-            </div>
-            <div
-              class="col-md-4 bg-dark text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-bed" aria-hidden="true">Bookings</i>
-            </div>
+           
           </div>
           <!-- now row end -->
         </div>

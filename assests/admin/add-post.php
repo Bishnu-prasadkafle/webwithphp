@@ -95,26 +95,68 @@
           <a href="add-reservation.php" class="btn btn-info btn-block"
             ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
+          <a href="add-users.php" class="btn btn-info btn-block"
+            ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
+          >
         </div>
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-            <i class="fa fa-plus-circle" aria-hidden="true" style="color:red"></i>
-            
+            <i
+              class="fa fa-plus-circle"
+              aria-hidden="true"
+              style="color: red"></i>
+
             Add new post
           </h2>
           <!-- now row start -->
-        <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="News Headline" >
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  id="title"
+                  placeholder="News Headline" />
+              </div>
+              <div class="form-group">
+                <label for="content">Content</label>
+                <textarea
+                  class="form-control"
+                  name="content"
+                  id="content"
+                  rows="3"
+                  placeholder="write your content"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="photo">Image</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  name="image"
+                  id="image"
+                  placeholder="choose file"
+                  aria-describedby="fileHelpId" />
+                <small id="fileHelpId" class="form-text text-muted"
+                  >Maximus size: 800KB</small
+                >
+              </div>
+
+              <div class="form-group">
+                <button type="submit" name="submit" class="btn btn-success">
+                  Add Post
+                </button>
+                <button type="submit" name="submit" class="btn btn-danger">
+                  Cancel
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        </div>
-        
-      
+
           <!-- now row end -->
         </div>
       </div>

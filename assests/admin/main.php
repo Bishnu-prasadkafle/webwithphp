@@ -95,7 +95,11 @@
           <a href="add-reservation.php" class="btn btn-info btn-block"
             ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
+          <a href="add-users.php" class="btn btn-info btn-block"
+            ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
+          >
         </div>
+        
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
@@ -123,6 +127,7 @@
               ;>
               <i class="fa fa-bed" aria-hidden="true">Bookings</i>
             </div>
+           
           </div>
           <!-- now row end -->
         </div>
