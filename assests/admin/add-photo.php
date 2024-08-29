@@ -95,35 +95,51 @@
           <a href="add-reservation.php" class="btn btn-info btn-block"
             ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
+          <a href="add-users.php" class="btn btn-info btn-block"
+            ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
+          >
         </div>
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-            Welcome
+            <i
+              class="fa fa-camera"
+              aria-hidden="true"
+              style="color: red"></i>
+
+            Add Photo
           </h2>
           <!-- now row start -->
           <div class="row">
-            <div
-              class="col-md-4 bg-dark text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-user-circle" aria-hidden="true">Total Users</i>
-            </div>
+            <div class="col-md-12">
+              <form action="" method="post">
+              <div class="form-group">
+                <label for="photo">Image</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  name="image"
+                  id="image"
+                  placeholder="choose file"
+                  aria-describedby="fileHelpId" />
+                <small id="fileHelpId" class="form-text text-muted"
+                  >Maximus size: 800KB</small
+                >
+              </div>
 
-            <div
-              class="col-md-4 bg-danger text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-bed" aria-hidden="true">Total Booking</i>
-            </div>
-            <div
-              class="col-md-4 bg-dark text-light"
-              style="padding: 20px 40px"
-              ;>
-              <i class="fa fa-bed" aria-hidden="true">Bookings</i>
+              <div class="form-group">
+                <button type="submit" name="submit" class="btn btn-success">
+                  Add Photo
+                </button>
+                <button type="submit" name="submit" class="btn btn-danger">
+                  Cancel
+                </button>
+              </div>
+              </form>
             </div>
           </div>
+
           <!-- now row end -->
         </div>
       </div>

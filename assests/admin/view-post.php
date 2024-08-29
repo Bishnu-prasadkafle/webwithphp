@@ -100,11 +100,30 @@
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-           View all posts
+         <i class="fa fa-newspaper-o" aria-hidden="true"></i> View all posts
           </h2>
-          <!-- now row start -->
+        <!-- now row start -->
           <div class="row">
-           
+            <table class="table table-dark table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>ID:</th>
+                  <th>Title</th>
+                  <th>Content</th>
+                  <th>Photo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
           <!-- now row end -->
         </div>
