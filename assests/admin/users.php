@@ -93,8 +93,11 @@
           >
 
           <a href="add-reservation.php" class="btn btn-info btn-block"
-            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
+            ><i class="fa fa-bed" aria-hidden="true">&nbsp;Booking</i></a
           >
+          <a href="users.php" class="btn btn-info btn-block"
+            ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
+        >
         </div>
         <div class="col-md-9">
           <h2

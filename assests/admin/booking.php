@@ -92,15 +92,19 @@
             ><i class="fa fa-camera" aria-hidden="true">&nbsp; Add Photos</i></a
           >
 
-          <a href="add-reservation.php" class="btn btn-info btn-block"
-            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
+          <a href="booking.php" class="btn btn-info btn-block"
+            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Booking</i></a
+          >
+          <a href="users.php" class="btn btn-info btn-block"
+            ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
           >
         </div>
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-         <i class="fa fa-bed-o" aria-hidden="true"></i> View Bookings
+            <a href="booking.php">
+         <i class="fa fa-bed-o" aria-hidden="true">View Bookings</i> </a>
           </h2>
         <!-- now row start -->
           <div class="row">
