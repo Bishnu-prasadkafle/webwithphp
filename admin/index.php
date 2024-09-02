@@ -70,10 +70,21 @@
         </div>
       </form>
       <?php
+      include 'connection.php';
       if(isset($_POST['Submit'])){
-  echo $c=$_POST['Username'];
-  echo $d=$_POST['Password'];
+    $c=$_POST['Username'];
+    $d=$_POST['Password'];
+    $query="select * from users where Username='$c' && Password='$d'";
+    $run=mysqli_query($conn,$query);
+    if(mysqli_num_rows($run)>0)
+    {
+      echo "<script>window.open('main.php', '_self')</script>";
     }
+    else
+    {
+    echo "<script>window.alert('Invaid User')</script>";
+    }
+  }
       ?>
     </div>
   </body>

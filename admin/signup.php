@@ -81,15 +81,23 @@
         </div>
       </form>
       <?php
+      include 'connection.php';
       if(isset($_POST['submit'])){
-        $a=$_POST['fname'];
-        $b=$_POST['lname'];
-        $c=$_POST['Username'];
-        $d=$_POST['Password'];
+
+         $a=$_POST['fname'];
+         $b=$_POST['lname'];
+         $c=$_POST['Username'];
+         $d=$_POST['Password'];
+        $query="insert into users(First_Name,Last_Name,username,password)values
+        ('$a','$b','$c','$d')";
+        $run=mysqli_query($conn,$query);
+        if($run){
+          echo "<script>window.alert('Success!')</script>";
+        }
+        else{
+          echo "<script>window.alert('Not success! something wrong')</script>";
+        }
       }
-
-
-
       ?>
     </div>
   </body>
