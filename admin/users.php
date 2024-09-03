@@ -103,7 +103,7 @@
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-         <i class="fa fa-user" aria-hidden="true"></i> Users
+        <i class="fa fa-user" aria-hidden="true"></i> Users
           </h2>
         <!-- now row start -->
           <div class="row">
