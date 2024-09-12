@@ -83,7 +83,7 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <a href="login.php" class="btn btn-outline-warning">Log in</a>
+          <a href="admin/index.php" class="btn btn-outline-warning">Log in</a>
         </form>
       </div>
     </nav>

@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="assests/css/style.css" />
     <link
       rel="shortcut icon"
+      href="./assests/image/logo.png"
+      type="image/x-icon" />
+    <link
+      rel="shortcut icon"
       href="assests/image/icon.png"
       type="image/x-icon" />
     <!-- Optional JavaScript -->
@@ -83,7 +87,7 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <a href="login.php" class="btn btn-outline-warning">Log in</a>
+          <a href="admin/index.php" class="btn btn-outline-warning">Log in</a>
         </form>
       </div>
     </nav>
@@ -260,8 +264,8 @@
 
     <!-- news start -->
     <div class="container-fluid">
-    <h2 class="display-3 text-center" style="padding: 30px; color: red">
-       News and Events
+      <h2 class="display-3 text-center" style="padding: 30px; color: red">
+        News and Events
       </h2>
       <div class="row">
         <div class="col-md-8">
@@ -355,11 +359,11 @@
     </div>
 
     <!-- why to choose us end -->
-        <!-- galery start -->
-       
+    <!-- galery start -->
+
     <div class="container">
-    <h2 class="display-3 text-center" style="padding: 30px; color: red">
-       Our Gallery
+      <h2 class="display-3 text-center" style="padding: 30px; color: red">
+        Our Gallery
       </h2>
       <div class="row">
         <div class="col-md-4">
