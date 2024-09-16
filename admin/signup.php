@@ -75,19 +75,19 @@
         </div>
         <div class="form-group">
           <button type="submit" name="submit" class="btn btn-success">Sign Up</button>
-          <button type="Reset"  class="btn btn-primary">Log in</button>
+          <button type="Reset"  class="btn btn-danger">Cancel</button>
           <br /><br />
-          <a href="index.php" class="btn btn-danger">Cancel</a>
+          <a href="index.php" class="btn btn-primary">Login</a>
         </div>
       </form>
       <?php
       include 'connection.php';
       if(isset($_POST['submit'])){
 
-         $a=$_POST['fname'];
-         $b=$_POST['lname'];
-         $c=$_POST['Username'];
-         $d=$_POST['Password'];
+      $a=$_POST['fname'];
+      $b=$_POST['lname'];
+      $c=$_POST['Username'];
+      $d=$_POST['Password'];
         $query="insert into users(First_Name,Last_Name,username,password)values
         ('$a','$b','$c','$d')";
         $run=mysqli_query($conn,$query);

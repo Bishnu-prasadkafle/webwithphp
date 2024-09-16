@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['Username']))
+{
+  header("location:index.php");
+}
+else{
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,9 +68,9 @@
             class="fa fa-user-circle-o"
             aria-hidden="true"
             style="font-size: 20px"
-            >User</i
           >
-          &nbsp; &nbsp;
+            <?php echo $_SESSION['Username']; ?> 
+            </i>
           <a href="logout.php">
             <i
               class="fa fa-power-off"
@@ -82,7 +93,7 @@
             ></a
           >
 
-          <a href="view-post.php" class="btn btn-info btn-block"
+          <a href="add-view.php" class="btn btn-info btn-block"
             ><i class="fa fa-newspaper-o" aria-hidden="true"
               >&nbsp; View Post</i
             ></a
@@ -92,63 +103,57 @@
             ><i class="fa fa-camera" aria-hidden="true">&nbsp; Add Photos</i></a
           >
 
-          <a href="add-reservation.php" class="btn btn-info btn-block"
-            ><i class="fa fa-bed" aria-hidden="true">&nbsp;Booking</i></a
+          <a href="booking.php" class="btn btn-info btn-block"
+            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
           <a href="users.php" class="btn btn-info btn-block"
             ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
-        >
+          >
         </div>
+        
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-        <i class="fa fa-user" aria-hidden="true"></i> Users
+            Update Password
           </h2>
-        <!-- now row start -->
+          <!-- now row start -->
           <div class="row">
-            <table class="table table-dark table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                  <th>Password</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php
-                // database connection
-                include 'connection.php';
-                $query='select * from users';
-                $run=mysqli_query($conn,$query);
-                while($row=mysqli_fetch_array($run))
-                {
-                  $a=$row['id'];
-                  $b=$row['First_Name'];
-                  $c=$row['Last_Name'];
-                  $d=$row['username'];
-                  $e=$row['password'];
+            <div class="col-md-12">
+              <form action="edit_password.php" method="get">
+
+                <div class="form-group">
+                  <label for="ID">ID</label>
+                  <input type="text" class="form-control" name="id1" id="id1" placeholder="ID" value="<?php echo $_GET['id']; ?>">
+                </div>
+
                 
-                ?>
-                <tr>
-                  <td scope="row"><?php echo $a;?></td>
-                  <td><?php echo $b;?></td>
-                  <td><?php echo $c;?></td>
-                  <td><?php echo $d;?></td>
-                  <td><?php echo $e;?></td>
-                  <td><a href="edit.php?id=<?php echo $a; ?> &fname=<?php echo  $b;?> 
-                  & lname=<?php echo $c; ?>  &username=<?php echo $d;?> &pw=<?php echo $e;$e ?>">Edit</a></td>
-                  <td><a href="delete.php">Delete</a></td>
-                </tr>
-                <?php
-                }
-                ?>
-              </tbody>
-            </table>
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" class="form-control" name="fname1" id="fname1" placeholder="First Name" value="<?php echo $_GET['fname']; ?>">
+                </div>
+
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" class="form-control" name="lname1" id="lname1" placeholder="Last Name" value="<?php echo $_GET['lname']; ?>">
+                </div>
+
+                <div class="form-group">
+                  <label for="uname">Username</label>
+                  <input type="text" class="form-control" name="uname1" id="uname1" placeholder="Username" value="<?php echo $_GET['username']; ?>">
+                </div>
+
+                <div class="form-group">
+                  <label for="pw">Password</label>
+                  <input type="text" class="form-control" name="pw1" id="pw1" placeholder="Password" value="<?php echo $_GET['pw']; ?>">
+                </div>
+
+                <div class="form-group">
+                <button type="submit" name="submit" class="btn btn-success">Update</button>
+                <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+              </form>
+            </div>
           </div>
           <!-- now row end -->
         </div>
@@ -157,3 +162,6 @@
     <!-- content end -->
   </body>
 </html>
+<?php
+}
+?>

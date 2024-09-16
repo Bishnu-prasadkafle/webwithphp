@@ -82,7 +82,7 @@
             ></a
           >
 
-          <a href="add-view.php" class="btn btn-info btn-block"
+          <a href="view-post.php" class="btn btn-info btn-block"
             ><i class="fa fa-newspaper-o" aria-hidden="true"
               >&nbsp; View Post</i
             ></a
