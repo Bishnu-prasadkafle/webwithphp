@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION['Username']))
+{
+  header("location:index.php");
+}
+else{
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -113,7 +125,7 @@
           <!-- now row start -->
           <div class="row">
             <div class="col-md-12">
-              <form action="" method="post">
+              <form action="" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="photo">Image</label>
                 <input
@@ -132,11 +144,21 @@
                 <button type="submit" name="submit" class="btn btn-success">
                   Add Photo
                 </button>
-                <button type="submit" name="submit" class="btn btn-danger">
+                <button type="reset" name="reset" class="btn btn-danger">
                   Cancel
                 </button>
               </div>
               </form>
+              <?php 
+                    if(isset($_POST['submit'])){
+                        $image_name=$_FILES['image']['name'];
+                        $image_type=$_FILES['image']['type'];
+                        $image_tmp=$_FILES['image']['tmp_name'];
+                        move_uploaded_file("$image_tmp","../assests/image/$image_name");
+                        echo "File uploaded successfully!"."<br>";
+                        echo "<img src='../assests/image/$image_name' width='300px'>";
+                    }           
+                    ?>
             </div>
           </div>
 
@@ -147,3 +169,6 @@
     <!-- content end -->
   </body>
 </html>
+<?php
+}
+?>
