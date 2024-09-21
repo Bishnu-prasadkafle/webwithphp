@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(!isset($_SESSION['username']))
+{
+  
+  header("location:index.php");
+}
+else
+{
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,9 +69,9 @@
           <i
             class="fa fa-user-circle-o"
             aria-hidden="true"
-            style="font-size: 20px"
-            >User</i
-          >
+            style="font-size: 20px">
+          <?php echo $_SESSION['username'] ?>
+          </i>
           &nbsp; &nbsp;
           <a href="logout.php">
             <i
@@ -113,6 +126,7 @@
           <!-- now row start -->
           <div class="row">
             <div class="col-md-12">
+              <form action="" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="title">Title</label>
                 <input
@@ -120,10 +134,12 @@
                   class="form-control"
                   name="title"
                   id="title"
-                  placeholder="News Headline" />
+                  placeholder="News Headline"
+                  aria-describedby="helpID" 
+                  />
               </div>
               <div class="form-group">
-                <label for="content">Content</label>
+                <label for="content">Content:</label>
                 <textarea
                   class="form-control"
                   name="content"
@@ -150,12 +166,37 @@
                 <button type="submit" name="submit" class="btn btn-success">
                   Add Post
                 </button>
-                <button type="submit" name="submit" class="btn btn-danger">
+                <button type="reset" name="reset" class="btn btn-danger">
                   Cancel
                 </button>
+            </div> 
+            </form>
+            <?php
+            if(isset($_POST['submit']))
+            {
+                include 'connection.php';
+                $title=$_POST['title'];
+                $content=$_POST['content'];
+                $image_name=$_FILES['image']['name'];
+                $image_type=$_FILES['image']['type'];
+                $image_tmp=$_FILES['image']['tmp_name'];
+                $query="insert into post(title,content,image)values('$title','$content','$image_name')";
+                $run=mysqli_query($conn,$query);
+                move_uploaded_file("$image_tmp","../assests/mage/$image_name");
+                if($run)
+                {
+                    echo "<script>window.alert('Post Added Successfully!')</script>";
+                }
+                else
+                {
+                    echo "<script>window.alert('Error Found!')</script>";
+                }
+            }
+            
+            ?>
               </div>
             </div>
-          </div>
+      
 
           <!-- now row end -->
         </div>
@@ -164,3 +205,6 @@
     <!-- content end -->
   </body>
 </html>
+<?php
+}
+?>
