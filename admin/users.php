@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION['Username']))
+{
+  
+  header("location:index.php");
+}
+else
+{
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,7 +69,7 @@
             class="fa fa-user-circle-o"
             aria-hidden="true"
             style="font-size: 20px"
-            >User</i
+            ><?php echo $_SESSION['Username'] ?></i
           >
           &nbsp; &nbsp;
           <a href="logout.php">
@@ -157,3 +169,6 @@
     <!-- content end -->
   </body>
 </html>
+<?php
+}
+?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['username']))
+if(!isset($_SESSION['Username']))
 {
   
   header("location:index.php");
@@ -9,8 +9,6 @@ else
 {
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -70,8 +68,10 @@ else
             class="fa fa-user-circle-o"
             aria-hidden="true"
             style="font-size: 20px">
-          <?php echo $_SESSION['username'] ?>
+            
+
           </i>
+          <?php echo $_SESSION['Username'] ?>
           &nbsp; &nbsp;
           <a href="logout.php">
             <i
@@ -182,7 +182,7 @@ else
                 $image_tmp=$_FILES['image']['tmp_name'];
                 $query="insert into post(title,content,image)values('$title','$content','$image_name')";
                 $run=mysqli_query($conn,$query);
-                move_uploaded_file("$image_tmp","../assests/mage/$image_name");
+                move_uploaded_file("$image_tmp","../assests/image/$image_name");
                 if($run)
                 {
                     echo "<script>window.alert('Post Added Successfully!')</script>";

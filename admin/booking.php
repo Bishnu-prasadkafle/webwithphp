@@ -57,7 +57,7 @@
             class="fa fa-user-circle-o"
             aria-hidden="true"
             style="font-size: 20px"
-            >User</i
+            >U<?php echo $_SESSION['Username'] ?></i
           >
           &nbsp; &nbsp;
           <a href="logout.php">
