@@ -9,7 +9,6 @@ else
 {
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,8 +68,7 @@ else
             class="fa fa-user-circle-o"
             aria-hidden="true"
             style="font-size: 20px"
-            ><?php echo $_SESSION['Username'] ?></i
-          >
+            ><?php echo $_SESSION['Username'] ?></i >
           &nbsp; &nbsp;
           <a href="logout.php">
             <i
@@ -105,17 +103,18 @@ else
           >
 
           <a href="reservation.php" class="btn btn-info btn-block"
-            ><i class="fa fa-bed" aria-hidden="true">&nbsp;Reservation</i></a
+            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
           <a href="users.php" class="btn btn-info btn-block"
             ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
-        >
+          >
         </div>
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-        <i class="fa fa-user" aria-hidden="true"></i> Users
+            <a href="booking.php">
+        <i class="fa fa-bed-o" aria-hidden="true">View Bookings</i> </a>
           </h2>
         <!-- now row start -->
           <div class="row">
@@ -123,43 +122,47 @@ else
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                  <th>Password</th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>phone</th>
+                  <th>Email</th>
+                  <th>No.of.rooms</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
-              <tbody>
               <?php
-                // database connection
-                include 'connection.php';
-                $query='select * from users';
-                $run=mysqli_query($conn,$query);
-                while($row=mysqli_fetch_array($run))
-                {
-                  $a=$row['id'];
-                  $b=$row['First_Name'];
-                  $c=$row['Last_Name'];
-                  $d=$row['username'];
-                  $e=$row['password'];
-                
-                ?>
+              include 'connection.php';
+              $query = 'select * from bookings';
+              $run=mysqli_query($conn,$query);
+              while($row=mysqli_fetch_array($run))
+            {
+              $a=$row['id'];
+              $b=$row['Name'];
+              $c=$row['address'];
+              $d=$row['phone'];
+              $e=$row['email'];
+              $f=$row['rooms'];
+
+              ?>
+              <tbody>
                 <tr>
+
                   <td scope="row"><?php echo $a;?></td>
                   <td><?php echo $b;?></td>
                   <td><?php echo $c;?></td>
                   <td><?php echo $d;?></td>
                   <td><?php echo $e;?></td>
-                  <td><a href="edit.php?id=<?php echo $a; ?> &fname=<?php echo  $b;?> 
-                  & lname=<?php echo $c; ?>  &username=<?php echo $d;?> &pw=<?php echo $e;$e ?>">Edit</a></td>
-                  <td><a href="delete.php?Del=<?php echo $a; ?>">Delete</a></td>
+                  <td><?php echo $f;?></td>
+                  <td><a href="edit-booking.php?ID=<?php echo $a;?> &Name= <?php echo $b;?>&address=<?php echo $c;?> &phone=<?php echo $d;?> &email=<?php echo $e;?> &rooms=<?php echo $f;?>"> Edit</a></td>   
+                  <td><a href="delete-booking.php?Del=<?php echo $a; ?>">Delete</a></td>      
                 </tr>
-                <?php
-                }
-                ?>
+              
+         
               </tbody>
+              <?php
+            }
+            ?>
             </table>
           </div>
           <!-- now row end -->

@@ -96,7 +96,7 @@
       style="background-color: white; padding: 0px 350px"
     >
       <div class="container" style="padding: 40px 10px; background-color:grey">
-        <form action="reserve_now.php" method="post">
+        <form action="" method="post">
           <div class="form-group">
             <label for="name">Name:</label>
             <input
@@ -147,24 +147,7 @@
               placeholder="No.of rooms"
             />
           </div>
-          <div class="form-group">
-            <label for="Check-in">Check-in date:</label>
-            <input
-              type="date"
-              name="check-in"
-              id="check-in"
-              placeholder="when do you plan to come"
-            />
-          </div>
-          <div class="form-group">
-            <label for="Check-out">Check-out date:</label>
-            <input
-              type="date"
-              name="check-out"
-              id="check-out"
-              placeholder="when do you plan to leave"
-            />
-          </div>
+         
 
           <div class="form-group">
             <button type="submit" name="submit" class="btn btn-success">
@@ -173,6 +156,28 @@
             <button type="reset" class="btn btn-danger">Cancel</button>
           </div>
         </form>
+        <?php
+        include 'admin/connection.php';
+        if (isset($_POST['submit'])){
+
+          $a=$_POST['name'];
+          $b=$_POST['address'];
+          $c=$_POST['phone'];
+          $d=$_POST['email'];
+          $e=$_POST['rooms'];
+
+
+          $query="insert into bookings (name, address, phone, email, rooms) values('$a','$b','$c','$d', $e )";
+          $run=mysqli_query($conn,$query);
+          if($run){
+            echo "<script>window.alert('Booking Successful')</script>";
+            echo "<script>window.open('Booking.php','_self')</script>";
+          }
+          else{
+            echo "<script>window.alert('Not Successful ')</script>";
+          }
+        }
+        ?>
       </div>
     </div>
 

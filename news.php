@@ -97,29 +97,34 @@
     </div>
     <!-- title end -->
     <!-- main start -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding: 20px; background-color: white">
+    <?php
+     include 'admin/connection.php';
+     $query='select * from post order by rand()';
+     $run=mysqli_query($conn,$query);
+     while($row=mysqli_fetch_array($run)){
+                     $a=$row['id'];
+                    $b=$row['title'];
+                    $c=$row['content'];
+                    $d=$row['image'];  
+                    ?> 
+
       <div class="row">
         <div class="col-md-8">
-          <h3>Mandrayu Farm House ranked at top one in Pokhara</h3>
+          <h3>
+            <?php echo $b ?>
+          </h3>
           <p>
-            Mandrayu Farm House has recently been recognized as one of the
-            top-rated destinations in Pokhara, celebrated for its unique blend
-            of agro-tourism and sustainable farming practices. Situated in a
-            serene location, the farm house offers visitors an immersive
-            experience in organic farming and local Nepali culture. The
-            popularity of Mandrayu Farm House has soared, making it a prime spot
-            for both local and international tourists seeking an authentic rural
-            experience in the heart of Pokhara​ (Highlights Tourism)​ (Gandaki
-            News).
+          <?php echo $c ?>
           </p>
         </div>
         <div class="col-md-4">
-          <img
-            src="./assests/image/award.png"
-            alt="award"
-            class="img-thumbnail" />
+        <img src="assests/image/<?php echo $d; ?>" class= "img-thumbnail">
         </div>
       </div>
+      <?php
+     }
+      ?>
     </div>
     <!-- main end -->
 

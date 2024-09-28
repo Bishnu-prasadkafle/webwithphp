@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['Username']))
+{
+  header("location:index.php");
+}
+else{
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,9 +68,9 @@
             class="fa fa-user-circle-o"
             aria-hidden="true"
             style="font-size: 20px"
-            >U<?php echo $_SESSION['Username'] ?></i
           >
-          &nbsp; &nbsp;
+            <?php echo $_SESSION['Username']; ?> 
+            </i>
           <a href="logout.php">
             <i
               class="fa fa-power-off"
@@ -82,7 +93,7 @@
             ></a
           >
 
-          <a href="view-post.php" class="btn btn-info btn-block"
+          <a href="add-view.php" class="btn btn-info btn-block"
             ><i class="fa fa-newspaper-o" aria-hidden="true"
               >&nbsp; View Post</i
             ></a
@@ -93,51 +104,62 @@
           >
 
           <a href="booking.php" class="btn btn-info btn-block"
-            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Booking</i></a
+            ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
           <a href="users.php" class="btn btn-info btn-block"
             ><i class="fa fa-user" aria-hidden="true">&nbsp; Users</i></a
           >
         </div>
+        
         <div class="col-md-9">
           <h2
             class="display-4 text-center"
             style="margin-top: 10px; transform: translate(-62px)">
-            <a href="booking.php">
-         <i class="fa fa-bed-o" aria-hidden="true">View Bookings</i> </a>
+            Update Password
           </h2>
-        <!-- now row start -->
+          <!-- now row start -->
           <div class="row">
-            <table class="table table-dark table-bordered table-hover">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Address</th>
-                  <th>phone</th>
-                  <th>Email</th>
-                  <th>No.of.Roooms</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td scope="row"></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                
-              </tbody>
-            </table>
-          </div>
-          <!-- now row end -->
+            <div class="col-md-12">
+              <form action="update-bookig.php" method="get">
+
+                <div class="form-group">
+                  <label for="ID">ID</label>
+                  <input type="text" class="form-control" name="id1" id="id1" placeholder="ID" value="<?php echo $_GET['id']; ?>">
+                </div>
+
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" name="name1" id="name1" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $_GET['name']; ?>">
+                </div>
+                <!-- Address -->
+                <div class="form-group">
+                  <label for="Address">Address:</label>
+                  <input type="text" name="address1" id="address1" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $_GET['address']; ?>">
+                </div>
+                <!-- phone -->
+                <div class="form-group">
+                  <label for="phone">Phone:</label>
+                  <input type="text" name="phone1" id="phone1" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $_GET['phone']; ?>">
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="text" name="email1" id="email1" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $_GET['email']; ?>">
+                </div>
+                 <!-- no of room -->
+                 <div class="form-group">
+                  <label for="rooms">rooms:</label>
+                  <input type="number" name="rooms1" id="rooms1" class="form-control" placeholder="" aria-describedby="helpId" value="<?php echo $_GET['rooms']; ?>">
+                </div>
+                <!-- submit button -->
+                <button type="submit" class="btn btn-success btn-lg" name="submit">Update Booking</button>
+            </form>
         </div>
-      </div>
+    </div>        
     </div>
-    <!-- content end -->
+       
   </body>
 </html>
+<?php
+}
+?>

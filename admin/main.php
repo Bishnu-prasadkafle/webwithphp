@@ -103,7 +103,7 @@ else{
             ><i class="fa fa-camera" aria-hidden="true">&nbsp; Add Photos</i></a
           >
 
-          <a href="booking.php" class="btn btn-info btn-block"
+          <a href="reservation.php" class="btn btn-info btn-block"
             ><i class="fa fa-bed" aria-hidden="true">&nbsp; Reservation</i></a
           >
           <a href="users.php" class="btn btn-info btn-block"

@@ -104,7 +104,7 @@
               Drop your messages:
             </h3>
             <div class="form-group">
-              <label for="name" style="font-weight: bold"> Full Name:</label>
+              <label for="Name" style="font-weight: bold"> Full Name:</label>
               <input
                 type="text"
                 name="name"
@@ -113,27 +113,8 @@
                 class="form-control" />
             </div>
 
-            <div class="form-group">
-              <label for="Address" style="font-weight: bold">Address:</label>
-              <input
-                type="text"
-                name="name"
-                id="Address"
-                placeholder="Address"
-                class="form-control" />
-            </div>
-
-            <div class="form-group">
-              <label for="Nationality" style="font-weight: bold"
-                >Nationality:</label
-              >
-              <input
-                type="text"
-                name="name"
-                id="Nationality"
-                placeholder=""
-                class="form-control" />
-            </div>
+          
+          
 
             <div class="form-group">
               <label for="Email" style="font-weight: bold">Email:</label>
@@ -145,30 +126,51 @@
                 class="form-control" />
             </div>
 
-            <div class="form-group">
-              <label for="phone" style="font-weight: bold">Phone:</label>
-              <input
-                type="phone"
-                name="phone"
-                id="phone"
-                placeholder="Enter your Number"
-                class="form-control" />
-            </div>
+          
 
             <div class="form-group">
-              <label for="message" style="font-weight: bold">Message</label>
+              <label for="Message" style="font-weight: bold">Message</label>
               <textarea
                 name="message"
                 id="message"
                 placeholder="Message here"
                 class="form-control"></textarea>
             </div>
-            <input
+            <button
+            name="submit"
               type="submit"
               value="Submit"
               class="btn btn-outline-light"
-              style="background-color: darkgreen" />
+              style="background-color: darkgreen" >Submit</button>
+
+              
+
           </form>
+          <?php
+if  (isset($_POST['submit']))
+ {
+   $to="caflebishnuprasad1@gmail.com";
+  $name=$_POST['name'];
+ 
+ $email=$_POST['email'];
+  
+   $message= $name. "<br>" .$email."<br>" .$_POST['message'];
+  $subject= "Query by" .$name;
+  $headers="From: $email";
+  if(mail($to, $subject, $message, $headers))
+  {
+    echo "Mail sent";
+  }
+  else
+  {
+  echo "Mail not  sent";
+
+  }
+
+ }
+
+
+        ?>
         </div>
 
         <div class="col-md-4">
@@ -288,9 +290,12 @@
 
           <p>All right you reserved: &copy; Mandrayu Farm House 2025</p>
         </div>
+
+       
+
       </div>
     </div>
-    \
+    
 
     <!-- footer end -->
   </body>
